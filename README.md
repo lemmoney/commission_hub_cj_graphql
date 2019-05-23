@@ -27,7 +27,7 @@ CommissionHub.setup do |config|
 
   config.setup :commission_junction_graphql do |c|
     c.base_uri = 'https://commissions.api.cj.com'
-    c.authorization_token = "Bearer XXXXXXXXXXXXXXXXXXX"
+    c.authorization_token = "Bearer <YOUR_CJ_API_TOKEN>"
   end
 
 end
@@ -38,11 +38,9 @@ end
 
   # Commissions Request
   query_params = {
-    query: {
-      forPublishers: '12345'
-    }
+    forPublishers: '<YOUR_CJ_PUBLISHER_ID>'
   }
-  @connection.commissions(mapper: JSON.parse, request_params: query_params)
+  @connection.commissions(mapper: mapper: ->(r){ JSON.parse r }, request_params: query_params)
 ```
 
 ## Development
