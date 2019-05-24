@@ -5,7 +5,7 @@ RSpec.describe 'CommissionHubCJGraphQL' do
     CommissionHub.setup do |config|
       config.setup :commission_junction_graphql do |c|
         c.base_uri = 'https://commissions.api.cj.com'
-        c.authorization_token = "Bearer #{ENV['CJ_API_KEY']}"
+        c.authorization_token = ENV['CJ_API_KEY']
       end
     end
   end

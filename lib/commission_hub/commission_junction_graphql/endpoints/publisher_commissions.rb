@@ -10,7 +10,7 @@ module CommissionHub
 
         private
         def authorization_token
-          connection.settings.authorization_token
+          "Bearer #{connection.settings.authorization_token}"
         end
 
         def query(params)
